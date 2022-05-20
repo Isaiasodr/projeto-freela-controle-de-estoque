@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Clientes</h1>
+    <table id="example" class="display">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>isaías</td>
+                <td>10525546484</td>
+                <td>389982515457</td>
+                <td>email@exmaple.com</td>
+                <td><button>Editar</button><button>Editar</button></td>
+               
+            </tr>
+
+        </tbody>
+        <tfoot>
+            <tr>
+               <th>Nome</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+
+    });
+</script>
+
+</html>

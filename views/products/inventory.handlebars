@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Estoque</h1>
+    <table id="example" class="display">
+        <thead>
+            <tr>
+                <th>Modelo</th>
+                <th>Tamanho</th>
+                <th>Estoque</th>
+                <th>Preço</th>
+                <th>Valor Total</th>
+                <th>Ações</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>model</td>
+                <td>G</td>
+                <td>15</td>
+                <td>R$500</td>
+                <td>R$7500</td>
+                <td><button>Editar</button><button>Editar</button></td>
+               
+            </tr>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Modelo</th>
+                <th>Tamanho</th>
+                <th>Custo</th>
+                <th>Preço de Venda</th>
+                <th>Preço de Venda</th>
+                <th>Preço de Venda</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+
+    });
+</script>
+
+</html>
