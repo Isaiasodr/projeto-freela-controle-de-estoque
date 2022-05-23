@@ -12,10 +12,12 @@
 </head>
 
 <body>
-    <h1>Estoque</h1>
+    <h1 class="h1">Estoque</h1>
+
     <table id="example" class="display">
+        <a href="/register"><button type="button" class="btn">Cadastrar Produto</button></a>
         <thead>
-            <tr>
+            <tr class="cabeçalho">
                 <th>Modelo</th>
                 <th>Tamanho</th>
                 <th>Estoque</th>
@@ -26,28 +28,46 @@
 
             </tr>
         </thead>
-        <tbody>
+        <tbody class="body-table">
+            <tr>
+                <td>model</td>
+                <td>G</td>
+                <td>15</td>
+                <td>R$500</td>
+                <td>R$7400</td>
+                <td>
+                    <a  href=""><i class='bx bxs-trash-alt'></i></a>
+                    <a  href=""><i class='bx bx-edit'></i></a>
+                </td>
+
+            </tr>
+            <tr>
+                <td>teste</td>
+                <td>G</td>
+                <td>15</td>
+                <td>R$500</td>
+                <td>R$7500</td>
+                <td>
+                    <a  href=""><i class='bx bxs-trash-alt'></i></a>
+                    <a  href=""><i class='bx bx-edit'></i></a>
+                </td>
+
+            </tr>
             <tr>
                 <td>model</td>
                 <td>G</td>
                 <td>15</td>
                 <td>R$500</td>
                 <td>R$7500</td>
-                <td><button>Editar</button><button>Editar</button></td>
-               
+                <td>
+                    <a  href=""><i class='bx bxs-trash-alt'></i></a>
+                    <a  href=""><i class='bx bx-edit'></i></a>
+                </td>
+
             </tr>
 
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Modelo</th>
-                <th>Tamanho</th>
-                <th>Custo</th>
-                <th>Preço de Venda</th>
-                <th>Preço de Venda</th>
-                <th>Preço de Venda</th>
-            </tr>
-        </tfoot>
+
     </table>
 </body>
 <script>
