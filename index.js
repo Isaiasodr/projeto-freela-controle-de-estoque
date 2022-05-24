@@ -13,8 +13,8 @@ app.set('view engine', 'handlebars')
 app.get("/",(req,res)=>{
     res.render("home")
 })
-app.get("/register",(req,res)=>{
-    res.render("products/register")
+app.get("/productsadd",(req,res)=>{
+    res.render("products/productsadd")
 })
 app.get("/inventory",(req,res)=>{
     res.render("products/inventory")
@@ -23,7 +23,13 @@ app.get("/clients",(req,res)=>{
     res.render("clients/clients")
 })
 app.get("/clientsadd",(req,res)=>{
-    res.render("clients/register")
+    res.render("clients/clientsadd")
+})
+app.get("/providers",(req,res)=>{
+    res.render("provider/provideradd")
+})
+app.get("/login",(req,res)=>{
+    res.render("auth/login")
 })
 
 
