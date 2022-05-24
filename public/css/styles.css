@@ -307,6 +307,9 @@ a {
     margin: 0 auto;
    
 }
+.data-table{
+    margin-top: -6%;
+}
 #example{
    padding-top:10px ;
 }
@@ -356,7 +359,7 @@ a {
     border-radius: 10px;
     align-items: center;
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 10%;
     width: 400px;
     height: 400px;
 }
