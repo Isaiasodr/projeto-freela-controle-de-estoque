@@ -6,8 +6,14 @@ const fileStore = require('session-file-store')(session)
 const flash = require('express-flash')
 const conn = require("./db/conn")
 const authRoutes = require('./routes/authRoutes')
+const productsRoutes = require('./routes/ProductsRoutes')
 const authController = require('./controllers/AuthController')
+
+
+
+/* models */
 const Admin = require("./models/Admin")
+const Products = require("./models/Products")
 
 
 app.use(express.static(__dirname + '/public'));
@@ -59,6 +65,7 @@ app.use((req, res, next) => {
 })
 /* rotas */
 app.use('/', authRoutes)
+app.use('/',productsRoutes)
 
 
 conn.sync(/* {force:true} */)

@@ -1,25 +1,27 @@
 <a href="/inventory">voltar</a>
-<form class="form-createProducts" action="/productsadd" method="POST">
+<form class="form-createProducts" action="/productsupdatesave" method="POST">
+<input type="hidden" name="id" value="{{products.id}}">
+
     <h2>Cadastro de Produtos</h2>
  
     <div class="container-form">
         <div class="form-products">
             <label for="name">Nome do Produto</label>
-            <input type="text" name="name" required>
+            <input type="text" name="name" value="{{products.name}}" required>
         </div>
 
         <div class="form-products">
             <label for="marca">marca</label>
-            <input type="text" name="marca" required>
+            <input type="text" name="marca" value="{{products.marca}}"required>
         </div>
          <div class="form-products">
             <label for="model">Modelo</label>
-            <input type="text" name="model" required>
+            <input type="text" name="model" value="{{products.model}}" required>
         </div>
         <div class="form-products">
             <label for="">Tamanho</label>
-            <select name="size" required>
-                <option value="selecionar"></option>
+            <select name="size"required>
+                <option value="selecionar">{{products.size}}</option>
                 <option value="P">P</option>
                 <option value="M">M</option>
                 <option value="G">G</option>
@@ -29,15 +31,16 @@
        
         <div class="form-products">
             <label for="amount">Quantidade</label>
-            <input type="number" name="amount" required>
+            <input type="number" name="amount"  value="{{products.amount}}"required>
         </div>
         <div class="form-products">
             <label for="cost">Custo</label>
-            <input type="number" name="cost" required>
+            <input type="number" name="cost" value="{{products.cost}}" required>
         </div>
+   
 
         <div class="form-products">
-            <input type="submit" value="Cadastrar">
+            <input type="submit" value="Editar">
         </div>
     </div>
 
