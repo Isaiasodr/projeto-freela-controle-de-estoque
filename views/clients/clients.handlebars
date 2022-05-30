@@ -21,51 +21,39 @@
             <tr class="cabeçalho">
                 <th>Nome</th>
                 <th>CPF</th>
+                <th>RG</th>
+                <th>Sexo</th>
+                <th>Phone</th>
                 <th>E-mail</th>
-                <th>Telefone</th>
-                <th>Compras</th>
                 <th>Ações</th>
 
 
             </tr>
         </thead>
         <tbody class="body-table">
+            {{#each clients}}
             <tr>
-                <td>Suellen Aparecida</td>
-                <td>4005410850404</td>
-                <td>su@gmail.com</td>
-                <td>38999501514</td>
-                <td>ID compras</td>
+                <td>{{this.name}}</td>
+                <td>{{this.cpf}}</td>
+                <td>{{this.rg}}</td>
+                <td>{{this.sex}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{this.email}}</td>
                 <td>
-                    <a  href=""><i class='bx bxs-trash-alt'></i></a>
-                    <a  href=""><i class='bx bx-edit'></i></a>
+                  <form action="/clientsRemove/:id" method="POST" style="display: inline;"  onsubmit="confirmarDelecao(event, this)">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <button type="submit" style="border: none; background:none;">
+                        <i class='bx bxs-trash-alt'></i>
+                    </button>
+                           
+                    </form>
+                 
+                    <a href="clientsupdate/{{this.id}}"><i class='bx bx-edit'></i></a>
                 </td>
 
             </tr>
-            <tr>
-                <td>teste</td>
-                <td>G</td>
-                <td>15</td>
-                <td>R$500</td>
-                <td>R$7500</td>
-                <td>
-                    <a  href=""><i class='bx bxs-trash-alt'></i></a>
-                    <a  href=""><i class='bx bx-edit'></i></a>
-                </td>
-
-            </tr>
-            <tr>
-                <td>model</td>
-                <td>G</td>
-                <td>15</td>
-                <td>R$500</td>
-                <td>R$7500</td>
-                <td>
-                    <a  href=""><i class='bx bxs-trash-alt'></i></a>
-                    <a  href=""><i class='bx bx-edit'></i></a>
-                </td>
-
-            </tr>
+      
+         {{/each}}
 
         </tbody>
 

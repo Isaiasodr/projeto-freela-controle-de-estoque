@@ -7,6 +7,7 @@ const flash = require('express-flash')
 const conn = require("./db/conn")
 const authRoutes = require('./routes/authRoutes')
 const productsRoutes = require('./routes/ProductsRoutes')
+const ClientsRoutes = require("./routes/ClientsRoutes")
 const authController = require('./controllers/AuthController')
 
 
@@ -14,6 +15,7 @@ const authController = require('./controllers/AuthController')
 /* models */
 const Admin = require("./models/Admin")
 const Products = require("./models/Products")
+const Clients = require("./models/Clients")
 
 
 app.use(express.static(__dirname + '/public'));
@@ -66,6 +68,7 @@ app.use((req, res, next) => {
 /* rotas */
 app.use('/', authRoutes)
 app.use('/',productsRoutes)
+app.use('/',ClientsRoutes)
 
 
 conn.sync(/* {force:true} */)
