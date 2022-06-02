@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="h1">Vendas</h1>
+
+    <table id="example" class="display">
+        <a href="/inventory"><button type="button" class="btn">Cadastrar Venda</button></a>
+        <thead>
+            <tr class="cabeçalho">
+                <th>Id do produto</th>
+                <th>Descrição do Produto</th>
+                <th>quantidade Vendida</th>
+                <th>Preço unitário</th>
+                <th>Total da Venda</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody class="body-table">
+            {{#each sales}}
+            <tr>
+                <td>{{this.productId}}</td>    
+                <td>{{this.description}}</td>
+                <td>{{this.amount}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.total}}</td>
+                  <td>
+                    <form action="/delete" method="POST" style="display: inline;"  onsubmit="confirmarDelecao(event, this)">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <button type="submit" style="border: none; background:none;">
+                        <i class='bx bxs-trash-alt'></i>
+                    </button>
+                           
+                    </form>
+                 
+                    <a href="/salesupdate/{{this.id}}"><i class='bx bx-edit'></i></a>
+
+                </td>
+
+            </tr>
+
+            {{/each}}
+        </tbody>
+
+    </table>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+
+    });
+</script>
+
+</html>

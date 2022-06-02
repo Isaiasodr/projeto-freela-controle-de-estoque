@@ -1,0 +1,34 @@
+<a href="/inventory">voltar</a>
+<form class="form-createProducts" action="/salesupdate" method="POST">
+<input type="hidden" name="id" value="{{sales.id}}">
+    <h2>Atualizar Vendas</h2>
+
+     <div class="form-products">
+            <label for="productId" >ID Produto</label>
+            <input type="text" name="productId" style="width:50px;" value="{{sales.productId}}" required>
+            
+        </div>
+           <div class="form-products">
+            <label for="product">Descrição do Produto</label>
+            <input type="text" name="description" value="{{sales.description}}" required>
+        </div>
+
+    <div class="container-form">
+        <div class="form-products">
+            <label for="amount">quantidade</label>
+            <input type="number" name="amount" value="{{sales.amount}}" required>
+        </div>
+
+        <div class="form-products">
+            <label for="price">Preço por unidade</label>
+            <input type="number" name="price" value="{{sales.price}}" required>
+        </div>
+
+     
+
+        <div class="form-products">
+            <input type="submit" value="Cadastrar venda">
+        </div>
+    </div>
+
+</form>
