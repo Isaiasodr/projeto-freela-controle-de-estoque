@@ -15,23 +15,27 @@ module.exports = class SalesController {
 
     static async salesAddSave(req, res) {
         const sales = {
-            amountproducts: req.body.amountproducts,
+            inventoryproducts: req.body.inventoryproducts,
             description: req.body.description,
             amount: req.body.amount,
             price: req.body.price,
-            total: req.body.amount * req.body.price,
+            total: req.body.price * req.body.amount,
             productId: req.body.product
         }
-        if (sales.amount > sales.amountproducts) {
-            req.flash('message', 'estoque indisponível')
+        if (req.body.inventoryproducts < req.body.amount) {
+            req.flash('message', 'Estoque indisponível')
             res.render('sales/salesadd')
             return
-        } 
+        }
+        try {
+            await Sales.create(sales)
+            req.flash('message', 'Venda Cadastrada com Sucesso')
+        } catch (error) {
+            console.log(error)
+        }
+      
+        res.redirect('/salesadd')
 
-        await Sales.create(sales)
-        
-
-        res.redirect('/sales')
     }
 
     static async AllSales(req, res) {

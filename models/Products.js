@@ -19,10 +19,14 @@ const Products = db.define('products',{
         require:true
     },
     amount:{
-        type:DataTypes.STRING,
+        type:DataTypes.TINYINT,
         require:true
     },
     cost:{
+        type:DataTypes.STRING,
+        require:true
+    },
+    total:{
         type:DataTypes.STRING,
         require:true
     }

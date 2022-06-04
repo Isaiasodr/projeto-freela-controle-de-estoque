@@ -396,3 +396,17 @@ a {
     transition: 0.5s ease;
 }
 
+/* flash message */
+
+.message{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    margin: 0 auto;
+    width: 42%;
+    background-color: #388f96;
+    padding: 20px;
+}
+
+/* images */
+

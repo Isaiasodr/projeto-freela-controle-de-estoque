@@ -32,14 +32,14 @@
         </thead>
         <tbody class="body-table">
             {{#each products}}
-            <tr>
+            <tr id="currency">
                 <td>{{this.id}}</td>
                 <td>{{this.name}}</td>
                 <td>{{this.marca}}</td>
                 <td>{{this.size}}</td>
                 <td>{{this.model}}</td>
                 <td>{{this.amount}}</td>
-                <td>{{this.cost}}</td>
+                <td id="cost">R$ {{this.cost}}</td>
 
                 <td>
                     <form action="/delete:id" method="POST" style="display: inline;"  onsubmit="confirmarDelecao(event, this)">

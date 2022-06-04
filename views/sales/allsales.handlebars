@@ -32,8 +32,8 @@
                 <td>{{this.productId}}</td>    
                 <td>{{this.description}}</td>
                 <td>{{this.amount}}</td>
-                <td>{{this.price}}</td>
-                <td>{{this.total}}</td>
+                <td>R${{this.price}}</td>
+                <td>R${{this.total}}</td>
                   <td>
                     <form action="/delete" method="POST" style="display: inline;"  onsubmit="confirmarDelecao(event, this)">
                     <input type="hidden" name="id" value="{{this.id}}">

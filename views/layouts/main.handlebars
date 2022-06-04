@@ -9,38 +9,54 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    {{!-- link css --}}
     <link rel="stylesheet" href="/css/styles.css">
+    {{!-- scripts --}}
     <script src="/js/events.js"></script>
     <script src="/js/deleteconfirm.js"></script>
+    <script src="/js/maskCPF.js"></script>
     <title>inventory manegement</title>
 </head>
+{{!-- begin page --}}
 
 <body id="body-pd">
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <!-- <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div> -->
     </header>
+    
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
-            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
+            
+            <div> <a href="/" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
                         class="nav_logo-name">DRA.CHERIE</span> </a>
+                        {{#if session.userid}}
                 <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
-                        <span class="nav_name">Dashboard</span> </a> <a href="#" class="nav_link"> <i
-                            class='bx bx-user nav_icon'></i> <span class="nav_name">Clientes</span> </a> <a href="#"
-                        class="nav_link"> <i class='bx bx-box'></i> <span
-                            class="nav_name">Estoque</span> </a> <a href="#" class="nav_link"> <i
-                            class='bx bx-dollar'></i> <span class="nav_name">Vendas</span> </a> <a href="#"
-                        class="nav_link"><i class='bx bxs-truck'></i> <span
+                        <span class="nav_name">Dashboard</span> </a> <a href="/clients" class="nav_link"> <i
+                            class='bx bx-user nav_icon'></i> <span class="nav_name">Clientes</span> </a> <a href="/inventory"
+                        class="nav_link"> <i class='bx bx-box'></i> <span class="nav_name">Estoque</span> </a> <a
+                        href="/sales" class="nav_link"> <i class='bx bx-dollar'></i> <span class="nav_name">Vendas</span>
+                    </a> <a href="/providers" class="nav_link"><i class='bx bxs-truck'></i> <span
                             class="nav_name">Fornecedores</span> </a> </div>
-            </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
+            </div> <a href="/logout" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
                     class="nav_name">SignOut</span> </a>
+                    {{else}}
+                    <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
+                    class="nav_name">login</span> </a>
+                    {{/if}}
         </nav>
     </div>
+    
     <!--Container Main start-->
     <br>
 
 
-
+ 
+    {{#if messages.message}}
+   <div class="message">
+        {{ messages.message}}
+        {{/if}}
+    </div>
 
 
 </body>

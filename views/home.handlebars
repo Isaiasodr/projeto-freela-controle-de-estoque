@@ -2,7 +2,9 @@
     <div class="container">
         <div class="inventory">
             <h1>ESTOQUE</h1>
-            <h2>R$5.000,00</h2>
+            {{#each total}}
+            <h2>{{this.total}}</h2>
+            {{/each}}
         </div>
 
 

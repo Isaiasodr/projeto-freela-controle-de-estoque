@@ -1,13 +1,14 @@
 const express = require('express')
 const router = express.Router()
+const checkAuth = require("../helpers/auth").checkAuth
 const ProductsController = require('../controllers/ProductsController')
 
-router.get('/productsadd',ProductsController.productsadd)
-router.post('/productsadd',ProductsController.productsaddsave)
-router.get('/inventory',ProductsController.inventory)
-router.get('/productsupdate/:id',ProductsController.productsupdate)
-router.post('/productsupdatesave',ProductsController.productsupdatesave)
-router.post('/delete:id',ProductsController.deleteproducts)
+router.get('/productsadd',checkAuth, ProductsController.productsadd)
+router.post('/productsadd',checkAuth,ProductsController.productsaddsave)
+router.get('/inventory',checkAuth,ProductsController.inventory)
+router.get('/productsupdate/:id',checkAuth,ProductsController.productsupdate)
+router.post('/productsupdatesave',checkAuth,ProductsController.productsupdatesave)
+router.post('/delete:id',checkAuth,ProductsController.deleteproducts)
 
 
 

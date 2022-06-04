@@ -15,14 +15,14 @@ const authController = require('./controllers/AuthController')
 
 
 /* models */
-const Admin = require("./models/Admin")
+const User = require("./models/User")
 const Products = require("./models/Products")
 const Clients = require("./models/Clients")
 const Provider = require("./models/Provider")
 const Sales = require("./models/Sales")
 
 
-app.use(express.static(__dirname + '/public'));
+
 
 //template engine
 app.engine('handlebars', exphbs.engine())
@@ -69,12 +69,18 @@ app.use((req, res, next) => {
     }
     next()
 })
+app.use(express.static(__dirname + '/public'));
 /* rotas */
 app.use('/', authRoutes)
 app.use('/',productsRoutes)
 app.use('/',ClientsRoutes)
 app.use('/',ProviderRoutes)
 app.use('/',salesRoutes)
+
+
+app.get("/",(req,res)=>{
+    res.render("home")
+})
 
 
 conn.sync(/* {force:true} */)

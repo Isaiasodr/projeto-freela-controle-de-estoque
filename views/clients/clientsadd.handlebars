@@ -9,7 +9,7 @@
 
         <div class="form-products">
             <label for="cpf">CPF</label>
-            <input type="text" name="cpf" required>
+            <input type="text" name="cpf" autocomplete="off" maxlength="14" id="cpf" onkeyup="mask_cpf()" required>
         </div>
         <div class="form-products">
             <label for="rg">RG</label>
@@ -39,3 +39,5 @@
     </div>
 
 </form>
+
+

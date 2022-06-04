@@ -5,6 +5,7 @@ const Products = require("../models/Products")
 const db = require("../db/conn")
 
 const Sales = db.define("sales",{
+
     description:{
         type:DataTypes.STRING,
         require:true
@@ -25,5 +26,7 @@ const Sales = db.define("sales",{
 
 
 Sales.belongsTo(Products)
+
+
 
 module.exports  = Sales
