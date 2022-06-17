@@ -12,6 +12,8 @@ const ProviderRoutes = require("./routes/ProviderRoutes")
 const salesRoutes = require("./routes/salesRoutes")
 const authController = require('./controllers/AuthController')
 
+const port = process.env.PORT || 3000;
+
 const cls = require("cls-hooked");
 const namespace = cls.createNamespace("....");
 const Sequelize = require("sequelize");
@@ -89,6 +91,6 @@ app.get("/",(req,res)=>{
 
 conn.sync(/* {force:true} */)
 .then(()=>{
-    app.listen(3000)
+    app.listen(port)
 })
 .catch((error)=> console.log(error))
