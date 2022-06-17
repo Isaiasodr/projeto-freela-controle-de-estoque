@@ -1,7 +1,7 @@
 const {Sequelize}  = require("sequelize")
 
-const sequelize = new Sequelize('inventory','root','',{
-    host:'localhost',
+const sequelize = new Sequelize('heroku_e49d759c836e2fd','be41ba90677c39','fdea28b9',{
+    host:'us-cdbr-east-05.cleardb.net',
     dialect:"mysql",
 })
 

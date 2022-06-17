@@ -12,7 +12,11 @@ const ProviderRoutes = require("./routes/ProviderRoutes")
 const salesRoutes = require("./routes/salesRoutes")
 const authController = require('./controllers/AuthController')
 
+const cls = require("cls-hooked");
+const namespace = cls.createNamespace("....");
+const Sequelize = require("sequelize");
 
+Sequelize.useCLS(namespace);
 
 /* models */
 const User = require("./models/User")

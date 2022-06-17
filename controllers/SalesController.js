@@ -2,6 +2,7 @@ const Sales = require('../models/Sales')
 const Products = require('../models/Products')
 
 
+
 module.exports = class SalesController {
 
     static async productsSales(req, res) {
@@ -40,7 +41,7 @@ module.exports = class SalesController {
 
     static async AllSales(req, res) {
         const sales = await Sales.findAll({ raw: true })
-        res.render("sales/allsales", { sales })
+        res.render("sales/allsales", {sales})
     }
     static async updatesales(req, res) {
         const id = req.params.id
@@ -72,7 +73,5 @@ module.exports = class SalesController {
         await Sales.destroy({ where: { id: id } })
         res.redirect('/sales')
     }
-
-
 
 }

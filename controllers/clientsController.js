@@ -1,5 +1,4 @@
 const Clients = require('../models/Clients')
-const bcrypt = require('bcrypt')
 
 module.exports = class clientsController {
     static clients(req, res) {
