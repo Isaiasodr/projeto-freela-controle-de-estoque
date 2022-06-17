@@ -36,7 +36,7 @@
 
             <div> <a href="/" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
                         class="nav_logo-name">DRA.CHERIE</span> </a>
-                {{#if session.userid}}
+               
                 <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
                         <span class="nav_name">Dashboard</span> </a> <a href="/clients" class="nav_link"> <i
                             class='bx bx-user nav_icon'></i> <span class="nav_name">Clientes</span> </a> <a
@@ -47,10 +47,10 @@
                             class="nav_name">Fornecedores</span> </a> </div>
             </div> <a href="/logout" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
                     class="nav_name">SignOut</span> </a>
-            {{else}}
+        
             <a href="/login" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">login</span>
             </a>
-            {{/if}}
+            
         </nav>
     </div>
 

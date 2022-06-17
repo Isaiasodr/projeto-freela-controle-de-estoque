@@ -3,13 +3,13 @@ const router = express.Router()
 const checkAuth = require("../helpers/auth").checkAuth
 const SalesController = require('../controllers/SalesController')
 
-router.get('/salesadd/:id', checkAuth, SalesController.productsSales)
-router.get('/salesadd', checkAuth, SalesController.salesAdd)
-router.post('/salesadd', checkAuth, SalesController.salesAddSave)
-router.get('/sales', checkAuth, SalesController.AllSales)
-router.get('/salesupdate/:id', checkAuth, SalesController.updatesales)
-router.post('/salesupdate', checkAuth, SalesController.UpdateSalesSave)
-router.post('/delete', checkAuth, SalesController.deletesales)
+router.get('/salesadd/:id', SalesController.productsSales)
+router.get('/salesadd', SalesController.salesAdd)
+router.post('/salesadd', SalesController.salesAddSave)
+router.get('/sales', SalesController.AllSales)
+router.get('/salesupdate/:id', SalesController.updatesales)
+router.post('/salesupdate', SalesController.UpdateSalesSave)
+router.post('/delete', SalesController.deletesales)
 
 
 
