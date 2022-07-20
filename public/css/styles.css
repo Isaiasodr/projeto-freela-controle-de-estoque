@@ -323,6 +323,7 @@ padding: 45px;
 .cabeçalho{
     background-color: #4723D9;
     color: white;
+   
 }
 .body-table{
     background-color:#fff;
@@ -473,6 +474,17 @@ padding: 45px;
         padding-left: 10px;
     
     
+    }
+}
+/* datatable */
+
+@media screen and (max-width:1050px){
+    .display{
+        width: 30%;
+    }
+    .dataTables_wrapper {
+       max-width: 10%; 
+       margin-left: 15%;
     }
 }
 
